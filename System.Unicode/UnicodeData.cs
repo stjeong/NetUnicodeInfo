@@ -27,7 +27,7 @@ namespace System.Unicode
 
 		public static UnicodeData ReadFromResources()
 		{
-			using (var stream = new DeflateStream(typeof(UnicodeData).GetTypeInfo().Assembly.GetManifestResourceStream("ucd.dat"), CompressionMode.Decompress, false))
+			using (var stream = typeof(UnicodeData).GetTypeInfo().Assembly.GetManifestResourceStream("ucd.dat"))
 			{
 				return ReadFromStream(stream);
 			}

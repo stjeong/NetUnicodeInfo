@@ -33,7 +33,7 @@ namespace System.Unicode.Build.Tasks
 		{
 			var buffer = new byte[8];
 
-			using (var file = new DeflateStream(File.OpenRead(DatabasePath), CompressionMode.Decompress))
+			using (var file = File.OpenRead(DatabasePath))
 			{
 				await file.ReadAsync(buffer, 0, buffer.Length);
 			}
